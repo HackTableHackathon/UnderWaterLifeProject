@@ -9,6 +9,7 @@ public class Main extends PApplet {
 
   public static void main(String[] args) {
     // TODO Auto-generated method stub
+    PApplet.main("Main"); // do not add any other statement to your TreasureHunt.main() method
 
   }
 
