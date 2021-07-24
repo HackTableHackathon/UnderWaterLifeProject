@@ -13,7 +13,9 @@ public class Main extends PApplet {
    * @param args
    */
   public static void main(String[] args) {
-    PApplet.main("Main"); 
+
+    PApplet.main("Main"); // do not add any other statement to your TreasureHunt.main() method
+
   }
   /**
    * sets display window
