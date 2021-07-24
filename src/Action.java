@@ -4,10 +4,11 @@ import java.util.ArrayList;
  * Action class that represent the response to an object being clicked or
  * dragged onto another.
  *
+ * @author Steven Lai
  */
 public class Action {
   private String message; // message printed by this action (or null to do nothing)
-  private InteractiveObjects object;
+  private InteractiveObject object;
 
   /**
    * create and initialize this new action
@@ -16,11 +17,11 @@ public class Action {
     this.message = message;
   }
 
-  public Action(InteractiveObjects object) {
+  public Action(InteractiveObject object) {
     this.object = object;
   }
 
-  public Action(String message, InteractiveObjects object) {
+  public Action(String message, InteractiveObject object) {
     this.message = message;
     this.object = object;
   }
@@ -28,10 +29,9 @@ public class Action {
   /**
    * when message is not null, message is printed to System.out
    * 
-   * if object is not nukk, it is activated and added to the arraylist
    * @param ArrayList of InteractiveObjects
    */
-  public void act(ArrayList<InteractiveObjects> objects) {
+  public void act(ArrayList<InteractiveObject> objects) {
     if (message != null) {
       System.out.println(message);
     }
