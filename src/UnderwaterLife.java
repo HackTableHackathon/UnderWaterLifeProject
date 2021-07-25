@@ -18,7 +18,8 @@ public class UnderwaterLife extends PApplet {
    * @param args input arguments
    */
   public static void main(String[] args) {
-    PApplet.main("UnderwaterLife"); // do not add any other statement to your TreasureHunt.main() method
+    PApplet.main("UnderwaterLife"); // do not add any other statement to your TreasureHunt.main()
+                                    // method
   }
 
   /**
@@ -30,8 +31,8 @@ public class UnderwaterLife extends PApplet {
   }
 
   /**
-   * Defines initial environment properties, loads background images and fonts,
-   * loads the clues, and initializes the instance fields, as the program starts.
+   * Defines initial environment properties, loads background images and fonts, loads the clues, and
+   * initializes the instance fields, as the program starts.
    */
   @Override
   public void setup() {
@@ -59,24 +60,26 @@ public class UnderwaterLife extends PApplet {
         // call act() if gameObject return non-null reference
         a.act(gameObjects);
       }
-      for (int k = gameObjects.size()-1; k >= 0; k--) {
+      for (int k = gameObjects.size() - 1; k >= 0; k--) {
         // if the object is deactivated, remove that object from the arraylist
         if (!gameObjects.get(k).isActive()) {
           gameObjects.remove(k);
         }
       }
     }
+    
+    System.out.println("["+ InteractiveObject.getProcessing().mouseX+", "+InteractiveObject.getProcessing().mouseY+"]");
+    
   }
 
   /**
-   * This method loads a background image, prints out some introductory text, and
-   * then reads in a set of interactive objects descriptions from a text file with
-   * the provided name. These represent the different clues for our treasure hunt
-   * adventure game. The image is stored in this.backgroundImage, and the
-   * activated interactive objects are added to the this.gameObjects list.
+   * This method loads a background image, prints out some introductory text, and then reads in a
+   * set of interactive objects descriptions from a text file with the provided name. These
+   * represent the different clues for our treasure hunt adventure game. The image is stored in
+   * this.backgroundImage, and the activated interactive objects are added to the this.gameObjects
+   * list.
    * 
-   * @param filename - relative path of file to load, relative to current working
-   *                 directory
+   * @param filename - relative path of file to load, relative to current working directory
    */
   private void loadGameSettings(String filename) {
     // start reading file contents
@@ -107,9 +110,9 @@ public class UnderwaterLife extends PApplet {
         InteractiveObject newObject = null;
 
         // first letter in line determines the type of the interactive object to create
-        if (Character.toUpperCase(line.charAt(0)) == 'C')
+        if ((line.charAt(0)) == 'C')
           newObject = loadNewClickableObject(parts);
-        else if (Character.toUpperCase(line.charAt(0)) == 'D')
+        else if ((line.charAt(0)) == 'D')
           newObject = loadNewDroppableObject(parts);
 
         // even deactivated object references are being added to the gameObjects
@@ -119,7 +122,7 @@ public class UnderwaterLife extends PApplet {
         // called
         gameObjects.add(newObject);
         if (Character.isLowerCase(line.charAt(0))) // lower case denotes non-active object
-          newObject.deactivate();   
+          newObject.deactivate();
         lineNumber++;
       }
 
@@ -137,13 +140,13 @@ public class UnderwaterLife extends PApplet {
   }
 
   /**
-   * Helper method to retrieve interactive objects' references from the
-   * gameObjects list, based on their names. If multiple objects have that name,
-   * this method will return the first (lowest-index) reference found.
+   * Helper method to retrieve interactive objects' references from the gameObjects list, based on
+   * their names. If multiple objects have that name, this method will return the first
+   * (lowest-index) reference found.
    * 
    * @param name is the name of the object that is being found
-   * @return a reference to an interactive object with the specified name, or null
-   *         when none is found
+   * @return a reference to an interactive object with the specified name, or null when none is
+   *         found
    */
   private InteractiveObject findObjectByName(String name) {
     for (int i = 0; i < gameObjects.size(); i++)
@@ -155,16 +158,15 @@ public class UnderwaterLife extends PApplet {
   }
 
   /**
-   * This method creates and returns a new ClickableObject based on the properties
-   * specified as strings within the provided parts array.
+   * This method creates and returns a new ClickableObject based on the properties specified as
+   * strings within the provided parts array.
    * 
-   * @param parts contains the following strings in this order: - C: indicates
-   *              that a ClickableObject is being created - name: the name of the
-   *              newly created interactive object - x: the starting x position
-   *              (as an int) for this object - y: the starting y position (as an
-   *              int) for this object - message: a string of text to display when
-   *              this object is clicked - name of the object to activate
-   *              (optional): activates this object when clicked
+   * @param parts contains the following strings in this order: - C: indicates that a
+   *              ClickableObject is being created - name: the name of the newly created interactive
+   *              object - x: the starting x position (as an int) for this object - y: the starting
+   *              y position (as an int) for this object - message: a string of text to display when
+   *              this object is clicked - name of the object to activate (optional): activates this
+   *              object when clicked
    * @return the newly created object
    */
   private ClickableObject loadNewClickableObject(String[] parts) {
@@ -184,16 +186,15 @@ public class UnderwaterLife extends PApplet {
   }
 
   /**
-   * This method creates and returns a new DroppableObject based on the properties
-   * specified as strings within the provided parts array.
+   * This method creates and returns a new DroppableObject based on the properties specified as
+   * strings within the provided parts array.
    * 
-   * @param parts contains the following strings in this order: - D: indicates
-   *              that a DroppableObject is being created - name: the name of the
-   *              newly created droppable object - x: the starting x position (as
-   *              an int) for this object - y: the starting y position (as an int)
-   *              for this object - message: a string of text to display when this
-   *              object is dropped on target - name of the object to activate
-   *              (optional): activates this object when dropped on target
+   * @param parts contains the following strings in this order: - D: indicates that a
+   *              DroppableObject is being created - name: the name of the newly created droppable
+   *              object - x: the starting x position (as an int) for this object - y: the starting
+   *              y position (as an int) for this object - message: a string of text to display when
+   *              this object is dropped on target - name of the object to activate (optional):
+   *              activates this object when dropped on target
    * 
    * @return the newly created droppable object
    */
@@ -208,12 +209,17 @@ public class UnderwaterLife extends PApplet {
     if (!(dropTarget instanceof VisibleObject))
       dropTarget = null;
     String message = parts[5].trim();
-    InteractiveObject activate = null;
-    if (parts.length > 6)
-      activate = findObjectByName(parts[6].trim());
+    // InteractiveObject activate = null;
+    //
+    // activate = findObjectByName(parts[6].trim());
     // create new droppable object
+    boolean isRecyclable = Boolean.parseBoolean(parts[6].trim());
+
+
+
+
     DroppableObject newObject = new DroppableObject(name, x, y, (VisibleObject) dropTarget,
-        new Action(message, activate));
+        new Action(message/* , activate */));
     return newObject;
   }
 }

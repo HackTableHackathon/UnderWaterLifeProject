@@ -1,3 +1,6 @@
+
+import static javax.swing.JOptionPane.*;
+import javax.swing.JOptionPane;
 /**
  * Class that represent objects that we want to interact with by clicking. It
  * extends Visible Object
