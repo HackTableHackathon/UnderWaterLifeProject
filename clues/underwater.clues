@@ -1,13 +1,13 @@
 oceanfloor2.jpg
-Welcome to this backyard treasure hunt! You have to find the gold coin and drop it onto the target to win.
+Welcome to the ocean clean up, you will have to pick up the waste and dispose of it in the correct bin
 C: recycle: 500: 420: A Recycling bin for paper, hard plastics, and glass
 C: garbage: 50: 420: A Garbage bin
 
-D: can: 50: 480: recycle: An Empty Aluminum Can: true
+D: can: 30: 440: recycle: An Empty Aluminum Can: true
 D: trashbag: 472: 396: garbage: A Trashbag: false
 D: applecore: 716: 371: garbage: A Half-eaten Apple: false
 D: robot: 320: 465: recycle: An Electronic toy robot: true 
-D: soda: 200: 300: recycle: An Empty Can of Soda: true
+D: soda: 460: 520: recycle: An Empty Can of Soda: true
 D: eggcarton2: 70: 360: recycle: An Empty Egg Carton: true
 D: plasticbag: 300: 400: garbage: A Plasticbag: false
 D: diaper: 660: 350: garbage: A diaper: false

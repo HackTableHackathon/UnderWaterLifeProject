@@ -27,7 +27,7 @@ public class UnderwaterLife extends PApplet {
    */
   @Override
   public void settings() {
-    size(800, 600);
+    size(900, 613);
   }
 
   /**
@@ -45,7 +45,7 @@ public class UnderwaterLife extends PApplet {
   }
 
   /**
-   * Updates the treasure hunt game display window
+   * Updates the underwater game display window
    */
   @Override
   public void draw() {
@@ -67,9 +67,10 @@ public class UnderwaterLife extends PApplet {
         }
       }
     }
-    
-    System.out.println("["+ InteractiveObject.getProcessing().mouseX+", "+InteractiveObject.getProcessing().mouseY+"]");
-    
+
+    // System.out.println("["+ InteractiveObject.getProcessing().mouseX+",
+    // "+InteractiveObject.getProcessing().mouseY+"]");
+
   }
 
   /**
@@ -214,9 +215,6 @@ public class UnderwaterLife extends PApplet {
     // activate = findObjectByName(parts[6].trim());
     // create new droppable object
     boolean isRecyclable = Boolean.parseBoolean(parts[6].trim());
-
-
-
 
     DroppableObject newObject = new DroppableObject(name, x, y, (VisibleObject) dropTarget,
         new Action(message/* , activate */));
